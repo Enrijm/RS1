@@ -2,6 +2,7 @@ package com.example.demo;
 
 import Objetos.PersonaService;
 import Objetos.PersonaServiceImp;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -31,14 +32,18 @@ public class Rs1Application {
 		return personas;
 	}
 
-	/*@Bean
-	public ApplicationStartupRunner1 schedulerRunner1() {
-		return new ApplicationStartupRunner1();
+	@Bean
+	CommandLineRunner ejecutame() { return p -> { System.out.println("Estamos arrrancando shuprimo"); };
 	}
 
 	@Bean
-	public ApplicationStartupRunner2 schedulerRunner2() {
-		return new ApplicationStartupRunner2();
-	}*/
+	public AppStartUp1 schedulerRunner1() {
+		return new AppStartUp1();
+	}
+
+	@Bean
+	public AppStartUp2 schedulerRunner2() {
+		return new AppStartUp2();
+	}
 
 }
